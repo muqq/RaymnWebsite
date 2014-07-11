@@ -1,0 +1,67 @@
+<div id="container" ng-controller="op-home-control">
+  <div id="fullpage">
+
+      <div class="section" id="homeId">
+        <div id="typingM">
+          <p class="p1"></p>
+          <p class="p2"></p>
+        </div>
+        <img class="scroll" src = "/img/LoginView/scroll.png"/>
+        <img id ='arrow' class="arrow down"  src = "/img/LoginView/arrow.png"/>
+      </div>
+
+      <div class="section" id="aboutId">
+        <img id = "aboutRaymn" src="/img/About/raymn.png"/>
+          <div id="section1_1">
+              <div id="{{data.id}}"  ng-repeat="data in data" ng-mouseleave="hideCard(data.id)"  ng-mouseover="showCard(data.id)" ng-click="showContent(data.id)" class="out-of-edge{{data.id}} card">
+                  <div class="nameInCard">
+                      <img id="nameImg" ng-src="{{data.nameImg}}"/>
+                  </div>
+                  <div class="photoInCard" id="{{data.photoId}}">
+                      <img class="photoImg" ng-src="{{data.img}}"/>
+                  </div>
+              </div>
+          </div>
+          <div id="section1_2" ng-click="hideContent()"></div>
+          <div id="section1_2_1">
+              <img class="contentImg" ng-src="{{content.img}}"/>
+              <h1>{{content.allName}}<h1/>
+              <h2>{{content.title}}<h2/>
+              <p>{{content.p1}}
+          </div>
+      </div>
+      <div class="section" id="servicesId">
+          
+
+      </div>
+
+      <div class="section" id="newsId">
+          
+
+      </div>
+
+      <div class="section" id="workId">
+          
+
+      </div>
+
+      <div class="section" id="contactId">
+        <img id="side01" src = "/img/LoginView/side_01.png"/>
+        <img id="side02" src = "/img/LoginView/side_02.png"/>
+        <img id="side03" src = "/img/LoginView/side_03.png"/>
+
+        <a href="#home"><img id="logo" src = "/img/LoginView/logo.png" data-menuanchor="home" ng-click="homeButton()" ng-mouseover="test()"/></a>
+        <a href="#aboutPage"><img ng-mouseover="buttonChange('about')" id="about" src = "/img/LoginView/about_1.png" data-menuanchor="aboutPage" / ></a>
+        
+        <a href="#servicesPage"><img ng-mouseover="buttonChange('services')" id="services" src = "/img/LoginView/services_1.png" data-menuanchor="servicesPage" /></a>
+        
+        <a href="#newsPage"><img ng-mouseover="buttonChange('news')" id="news" src = "/img/LoginView/news_1.png" data-menuanchor="newsPage"/></a>
+        
+        <a href="#workPage"><img ng-mouseover="buttonChange('work')" id="work" src = "/img/LoginView/work_1.png" data-menuanchor="workPage"/></a>
+        
+        <a href="#contactPage"><img ng-mouseover="buttonChange('contact')" id="contact"  src = "/img/LoginView/contact_1.png" data-menuanchor="contactPage"/></a>
+      </div>
+  </div>
+
+</div>
+

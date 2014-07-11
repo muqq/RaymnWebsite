@@ -1,0 +1,318 @@
+#container {
+  position:relative;  
+}
+
+body {
+  margin-top: 0px;
+  padding: 0px;
+  border: 0px;
+  margin-bottom:0px;
+  
+}
+
+.p1, .p2{
+    font-size: 35px;
+    font-weight: bold; 
+    font-color: white ;
+}
+
+#homeId{
+    background-color: #FFF100;
+
+}
+
+#aboutId{
+    background-color: #FFFF66;
+
+}
+
+#servicesId{
+    background-color: #CCFF66;
+
+}
+
+#newsId{
+    background-color: #97FF97;
+
+}
+
+#workId{
+    background-color: #66FF99;
+
+}
+
+#contactId{
+    background-color: #66FFCC;
+
+}
+
+#side01 {
+    position: fixed;
+    right:0px;
+    bottom:0px;
+    vertical-align: bottom ;
+}
+
+#side02 {
+    position: fixed;
+    width:138px;
+    right:-1px;
+    bottom:135px;
+    vertical-align: bottom ;
+}
+
+#side03 {
+    position: fixed;
+    right:138px;
+    bottom:0px;
+    height:137px;
+    vertical-align: bottom ;
+}
+
+#logo {
+    position: fixed;
+    height:114px;
+    width:486px;
+    top:40px;
+    left:70px;
+}
+
+.scroll{
+    position: absolute;
+    bottom:150px;
+    left:500px;
+    height: 41px;
+    width: 234px;
+}
+
+.arrow{
+    position: absolute;
+    bottom:165px;
+    left:507px;
+    -webkit-transition:bottom 0.5s ease-out 0.3s;
+    transition: bottom 0.5s ease-out 0.3s;
+
+}
+
+.down{
+    bottom: 155 ;
+}
+
+#about{
+    position: fixed;
+    height:27px;
+    width:76px;
+    top:150px;
+
+}
+
+#services{
+    position: fixed;
+    height:27px;
+    width:76px;
+    top:190;
+}
+
+#news{
+    position: fixed;
+    height:27px;
+    width:76px;
+    top:230;
+}
+
+#work{
+    position: fixed;
+    height:27px;
+    width:76px;
+    top:275;
+}
+
+#contact{
+    position: fixed;
+    height:27px;
+    width:76px;
+    top:320;
+}
+
+#typingM{
+    position: absolute;
+    top: 180px;
+    left: 100px;
+}
+
+#aboutRaymn{
+    position:absolute;
+    left:450px;
+}
+
+#section1_1 {
+    position: relative;
+    left: 170px;
+    height: 300px;
+    width: 1100px;
+    top: 125px;
+    background: #FFFF66;
+    font-size: 20px;
+    color: black;
+}
+
+
+#card1, #card2, #card3, #card4, #card5 {
+    position: relative;
+    float:left;
+    cursor: pointer;
+    bottom: 0;
+    //=====opacity change=====
+    -webkit-transition: opacity 0.5s linear;
+    -webkit-transform-origin: 50% 50%;
+    transition: opacity 0.5s linear;
+    transform-origin: 50% 50%;
+    //=====translate=====
+    -moz-transform:translatex(0px, -100px);
+    -ms-transform:translatex(0px, -100px);
+    -o-transform:translatex(0px, -100px);
+    /*-webkit-transition: -webkit-transform 0.5s ease-out;*/
+    -webkit-transform-origin: 50% 50%;
+    /*transition: transform 0.5s ease-out;*/
+    
+
+}
+.out-of-edgecard1{
+    bottom: -130px !important;
+    opacity: 0;
+}
+.out-of-edgecard2{
+    bottom: -160px !important;
+    opacity: 0;
+}
+.out-of-edgecard3{
+    bottom: -190px !important;
+    opacity: 0;
+}
+.out-of-edgecard4{
+    bottom: -220px !important;
+    opacity: 0;
+}
+.out-of-edgecard5{
+    bottom: -250px !important;
+    opacity: 0;
+}
+#card1{
+    -webkit-transition:bottom 0.8s ease-out 0.3s, -webkit-transform 0.5s ease-out;
+    transition: bottom 0.8s ease-out 0.3s, -webkit-transform 0.5s ease-out;
+}
+#card2{
+    -webkit-transition:bottom 0.8s ease-out 0.35s, -webkit-transform 0.5s ease-out;
+    transition: bottom 0.8s ease-out 0.35s, -webkit-transform 0.5s ease-out;
+}
+#card3{
+    -webkit-transition:bottom 0.8s ease-out 0.4s, -webkit-transform 0.5s ease-out;
+    transition: bottom 0.8s ease-out 0.4s, -webkit-transform 0.5s ease-out;
+}
+#card4{
+    -webkit-transition:bottom 0.8s ease-out 0.45s, -webkit-transform 0.5s ease-out;
+    transition: bottom 0.8s ease-out 0.45s, -webkit-transform 0.5s ease-out;
+}
+#card5{
+    -webkit-transition:bottom 0.8s ease-out 0.5s, -webkit-transform 0.5s ease-out;
+    transition: bottom 0.8s ease-out 0.5s, -webkit-transform 0.5s ease-out;
+}
+#card1:hover, #card2:hover, #card3:hover, 
+#card4:hover, #card5:hover {
+    -moz-transform:translatex(0px, -70px);
+    -ms-transform:translatex(0px, -70px);
+    -o-transform:translatex(0px, -70px);
+    -webkit-transform: translate(0px, -70px);
+    transform: translate(0px, -70px);
+}
+
+#card1:hover > .photoInCard, #card2:hover > .photoInCard, 
+#card3:hover > .photoInCard, #card4:hover > .photoInCard, 
+#card5:hover > .photoInCard {
+    opacity: 1;
+}
+
+.nameInCard {
+    position: relative;
+    width: 160px;
+    height: 44px;
+    margin: 5px;
+    text-align: center;
+}
+
+.photoInCard {
+    position: relative;
+    background-color: clear ;
+    width: 160px;
+    height: 220px;
+    margin: 5px;
+    text-align: center;
+    opacity: 0;
+}
+
+.photoInCard {
+     -webkit-transition: all 0.5s linear;
+    -webkit-transform-origin: 50% 50%;
+    transition: all 0.5s linear;
+    transform-origin: 50% 50%;
+}
+
+.photoImg{
+    position: relative;
+    top: 10px;
+    width: 150px;
+    border-style: solid;
+    border-width: 5px ;
+    border-color: #66CC66;
+
+}
+
+#nameImg{
+    height:79px;
+}
+
+#section1_2 {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100% ;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    display: none;
+}
+
+#section1_2_1 {
+    position: absolute;
+    height: 248px;
+    width: 776px;
+    left: 50%;
+    top: 70%;
+    margin-top: -280px;
+    margin-left: -440px;
+    padding: 0px 40px 0px 40px;
+    color: white;
+    background-color: #66CC66;;
+    z-index: 20;
+    display: none;
+}
+#section1_2_1 img {
+    position: :absolute;
+    height: 220px;
+    width:220px;
+    
+}
+
+#section1_2_1 h1 {
+    font-size: 40px;
+    left:100px;
+    
+}
+
+#section1_2_1 h2 {
+    font-size: 20px;
+}
+
+
+
+
