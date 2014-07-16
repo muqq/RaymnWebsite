@@ -1,0 +1,23 @@
+#card1:hover {
+    -moz-transform:translatex(0px, -70px);
+    -ms-transform:translatex(0px, -70px);
+    -o-transform:translatex(0px, -70px);
+    -webkit-transform: translate(0px, -70px);
+    transform: translate(0px, -70px);
+    -webkit-animation: card_hover 1s linear 0s infinite alternate;
+}
+
+#card1:hover > .photoInCard,
+#card1:hover > .photoImg {
+    opacity: 1;
+}
+
+#card1:hover > .photoBorder {
+    opacity: 1;
+    -moz-transform: translate(8px, 8px);
+    -ms-transform: translate(8px, 8px);
+    -o-transform: translate(8px, 8px);
+    -webkit-transform: translate(8px, 8px);
+    transform: translate(8px, 8px);
+    -webkit-animation: card_hover_photoBorder 1s linear 0s infinite alternate;
+}

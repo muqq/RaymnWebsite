@@ -1,0 +1,35 @@
+@-webkit-keyframes arrow {
+    0%   {bottom:165px;}
+    50%  {bottom:155px;}
+    100% {bottom:165px;}
+}
+
+@-webkit-keyframes card_hover {
+    0%   {top: 0px;}
+    50%  {top: -10px;}
+    100% {top: 0px;}
+}
+
+@-webkit-keyframes card_hover_photoBorder {
+    0%   {top: 60px; left: 2px; border-color: #66CC66}
+    50%  {top: 63px; left: 5px; border-color: black}
+    100% {top: 60px; left: 2px; border-color: #66CC66}
+}
+
+@-webkit-keyframes section1_2_2 {
+    0%   {margin-top: -125px;}
+    50%  {margin-top: -128px;}
+    100% {margin-top: -125px;}
+}
+
+@-webkit-keyframes section1_2_3 {
+    0%   {margin-top: -122px; margin-left: -412px}
+    50%  {margin-top: -120px; margin-left: -409px}
+    100% {margin-top: -122px; margin-left: -412px}
+}
+
+@-webkit-keyframes aboutRaymn {
+    0%  {top: 180px;}
+    50% {top: 180px;}
+    100%{top: 175px;}
+}

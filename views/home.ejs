@@ -1,67 +1,62 @@
-<div id="container" ng-controller="op-home-control">
-  <div id="fullpage">
+<!DOCTYPE HTML SYSTEM>
+<img class="frame" id="side01" src="img/LoginView/side_01.png">
+<img class="frame" id="side02" src="img/LoginView/side_02.png">
+<img class="frame" id="side03" src="img/LoginView/side_03.png">
+<a href="#Page0">
+  <img class="frame" id="logo" src="img/logo.png" ng-click="changeColor(0)">
+</a>
 
-      <div class="section" id="homeId">
-        <div id="typingM">
-          <p class="p1"></p>
-          <p class="p2"></p>
-        </div>
-        <img class="scroll" src = "/img/LoginView/scroll.png"/>
-        <img id ='arrow' class="arrow down"  src = "/img/LoginView/arrow.png"/>
-      </div>
-
-      <div class="section" id="aboutId">
-        <img id = "aboutRaymn" src="/img/About/raymn.png"/>
-          <div id="section1_1">
-              <div id="{{data.id}}"  ng-repeat="data in data" ng-mouseleave="hideCard(data.id)"  ng-mouseover="showCard(data.id)" ng-click="showContent(data.id)" class="out-of-edge{{data.id}} card">
-                  <div class="nameInCard">
-                      <img id="nameImg" ng-src="{{data.nameImg}}"/>
-                  </div>
-                  <div class="photoInCard" id="{{data.photoId}}">
-                      <img class="photoImg" ng-src="{{data.img}}"/>
-                  </div>
-              </div>
-          </div>
-          <div id="section1_2" ng-click="hideContent()"></div>
-          <div id="section1_2_1">
-              <img class="contentImg" ng-src="{{content.img}}"/>
-              <h1>{{content.allName}}<h1/>
-              <h2>{{content.title}}<h2/>
-              <p>{{content.p1}}
-          </div>
-      </div>
-      <div class="section" id="servicesId">
-          
-
-      </div>
-
-      <div class="section" id="newsId">
-          
-
-      </div>
-
-      <div class="section" id="workId">
-          
-
-      </div>
-
-      <div class="section" id="contactId">
-        <img id="side01" src = "/img/LoginView/side_01.png"/>
-        <img id="side02" src = "/img/LoginView/side_02.png"/>
-        <img id="side03" src = "/img/LoginView/side_03.png"/>
-
-        <a href="#home"><img id="logo" src = "/img/LoginView/logo.png" data-menuanchor="home" ng-click="homeButton()" ng-mouseover="test()"/></a>
-        <a href="#aboutPage"><img ng-mouseover="buttonChange('about')" id="about" src = "/img/LoginView/about_1.png" data-menuanchor="aboutPage" / ></a>
-        
-        <a href="#servicesPage"><img ng-mouseover="buttonChange('services')" id="services" src = "/img/LoginView/services_1.png" data-menuanchor="servicesPage" /></a>
-        
-        <a href="#newsPage"><img ng-mouseover="buttonChange('news')" id="news" src = "/img/LoginView/news_1.png" data-menuanchor="newsPage"/></a>
-        
-        <a href="#workPage"><img ng-mouseover="buttonChange('work')" id="work" src = "/img/LoginView/work_1.png" data-menuanchor="workPage"/></a>
-        
-        <a href="#contactPage"><img ng-mouseover="buttonChange('contact')" id="contact"  src = "/img/LoginView/contact_1.png" data-menuanchor="contactPage"/></a>
-      </div>
+<nav class="frame" id="rightBar" >
+  <a class="rightWord" id="text1" href="#Page1" ng-click="changeColor(1)">about</a>
+  <a class="rightWord" id="text2" href="#Page2" ng-click="changeColor(2)">services</a>
+  <a class="rightWord" id="text3" href="#Page3" ng-click="changeColor(3)">news</a>
+  <a class="rightWord" id="text4" href="#Page4" ng-click="changeColor(4)">work</a>
+  <a class="rightWord" id="text5" href="#Page5" ng-click="changeColor(5)">contact</a>
+</nav>
+<div id="fullpage">
+  <div class="section" id="section0">
+    <div id="section0_1">
+      <p id="p1"></p>
+      <p id="p2"></p>
+    </div>
+    <img id="scroll" src="img/LoginView/scroll.png"/>
+    <img id="arrow" src="img/LoginView/arrow.png"/>
   </div>
-
+  <div class="section" id="section1">
+    <img id="aboutRaymn" src="img/About/raymn.png"/>
+    <div id="section1_1">
+      <div id="{{data.id}}" ng-click="clickCard(data.number)" ng-repeat="data in data">
+        <img class="nameImg" ng-src="{{data.nameImg}}" ng-mouseover="photoImgShow(data.number)" ng-mouseleave="photoImgHide(data.number)"/><br>
+        <img class="photoImg" id="photoImg{{data.number}}" ng-src="{{data.img}}" ng-mouseover="photoImgShowAgain(data.number)" ng-mouseleave="photoImgHide(data.number)">
+        <div class="photoBorder"></div>
+      </div>
+    </div>
+    <div id="section1_2">
+      <div id="section1_2_1" ng-click="clickDark()"></div>
+      <div id="section1_2_2"><br>
+        <img id="photo" ng-src="{{content.img}}">
+        <img id="close" src="img/About/close.png" ng-click="clickDark()">
+        <div id="personalText">
+          <h>{{content.allName}}</h>
+          <p>{{content.p1}}</p>
+        </div>
+      </div>
+      <div id="section1_2_3">
+      </div>
+    </div>
+  </div>
+  <div class="section" id="section2">
+    services
+  </div>
+  <div class="section" id="section3">
+    news
+  </div>
+  <div class="section" id="section4">
+    Work
+  </div>
+  <div class="section" id="section5">
+    Contact
+  </div>
 </div>
+
 
