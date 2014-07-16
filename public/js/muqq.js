@@ -43,54 +43,60 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window',
                     
                 }
             });
+        });
 
-});
-
-function cardExplode()  {
-    var ran = new Array();
-    for (var i = 0; i<11; i++) {
-        ran[i] = (Math.random()-0.5)*2000;
-    }
-    for (var j = 1; j<6; j++) {
-        $('#card'+j).attr('id', 'card' + j + 'WhenClick');
-        $('#card' + j + 'WhenClick').css({bottom: ran[j]+'px', left: ran[j+5]+'px', visibility: 'hidden'});
-    }
-}
-function cardExplodeRe() {
-    for (var i = 1; i < 6; i++) {
-        $('#card' + i + 'WhenClick').css({bottom: 0+'px', left: 0+'px', visibility: 'visible'});
-        $('#card' + i + 'WhenClick').attr('id','card' + i);
-    }
-}     
-function changeText(cont1,cont2,speed){
-    var Otext= "Raymn Agency , a team consist of vitality , creativity and dream";
-    var Otext2 = "We design visual , build connection , we narrate brand story.";
-    var Ocontent=Otext.split("");
-    var Ocontent2 = Otext2.split("");
-    var interval ;
-    var counter = 0 ;
-    function showLine(textArray, htmlText, htmlClass){
-        if (counter<textArray.length){
-            htmlText.append(textArray[counter]);
-            counter += 1 ;
-        }else{
-            clearInterval(interval);
-            setTimeout(function(){
-                $(htmlClass).html("");
-                if (counter%2 ===0){
-                    start(function(){showLine(Ocontent2, cont2, "#p2")});
-                }else{
-                    start(function(){showLine(Ocontent, cont1, "#p1")});
-                }
-                counter = 0 ;
-            },2000);
+        function cardExplode()  {
+            var ran = new Array();
+            for (var i = 0; i<11; i++) {
+                ran[i] = (Math.random()-0.5)*2000;
+            }
+            for (var j = 1; j<6; j++) {
+                $('#card'+j).attr('id', 'card' + j + 'WhenClick');
+                $('#card' + j + 'WhenClick').css({bottom: ran[j]+'px', left: ran[j+5]+'px', visibility: 'hidden'});
+            }
         }
-    }
-    function start(line) {
-        interval = setInterval(line,speed);
-    }
-    start(function(){showLine(Ocontent, cont1, "#p1")});
-}
+        function cardExplodeRe() {
+            for (var i = 1; i < 6; i++) {
+                $('#card' + i + 'WhenClick').css({bottom: 0+'px', left: 0+'px', visibility: 'visible'});
+                $('#card' + i + 'WhenClick').attr('id','card' + i);
+            }
+        }     
+        function changeText(cont1,cont2,cont3,speed){
+            var Otext= "Raymn ";
+            var Otext2 = "A team consist of vitality , creativity and dream!"
+            var Otext3 = "We design visual , build connection , we narrate brand story.";
+            var Ocontent = Otext.split("");
+            var Ocontent2 = Otext2.split("");
+            var Ocontent3 = Otext3.split("");
+            console.log(Ocontent.length, Ocontent2.length, Ocontent3.length);
+            var interval ;
+            var counter = 0 ;
+            function showLine(textArray, htmlText, htmlClass){
+                if (counter<textArray.length){
+                    htmlText.append(textArray[counter]);
+                    counter += 1 ;
+                }else{
+                    clearInterval(interval);
+                    setTimeout(function(){
+                        if (counter%3 ===0){
+                            start(function(){showLine(Ocontent2, cont2, "#p2")});
+                        }else if(counter%3===2){
+                            $(htmlClass).html("");
+                            start(function(){showLine(Ocontent3, cont3, "#p3")});
+                        }else{
+                            $(htmlClass).html("");
+                            $('#p1').html("");
+                            start(function(){showLine(Ocontent, cont1, "#p1")});
+                        }
+                        counter = 0 ;
+                    },2000);
+                }
+            }
+            function start(line) {
+                interval = setInterval(line,speed);
+            }
+            start(function(){showLine(Ocontent, cont1, "#p1")});
+        }
         // init size
         //i love fifi's mother
         var rate = $window.innerWidth/1458 ;
@@ -111,7 +117,6 @@ function changeText(cont1,cont2,speed){
         //window resize
         $(window).resize(function(){
             $scope.$apply(function(){
-            //do something to update current scope based on the new innerWidth and let angular update the view.
             size();
         });
         });
@@ -137,10 +142,6 @@ function changeText(cont1,cont2,speed){
         $scope.clickDark = function(){
             $('#section1_2').css('visibility','hidden');
             cardExplodeRe();
-            $scope.apply(function(){
-                $scope.content = {};
-            });
-            
         }
 
         $scope.photoImgShow = function(cardNumber){
@@ -160,6 +161,9 @@ function changeText(cont1,cont2,speed){
             }
         }
 
+        function test(cardNumber){
+            console.log(cardNumber);
+        }
 
         $(document).keyup(function(e) {
             if (e.keyCode == 27) { 
@@ -221,7 +225,7 @@ function changeText(cont1,cont2,speed){
         ]
 
         size();
-        changeText($("#p1"),$("#p2"),50);
+        changeText($("#p1"),$("#p2"),$("#p3"),50);
 
 
     }

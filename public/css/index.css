@@ -154,16 +154,15 @@
     height: 300px;
     width: 900px;
     margin-top: -90px;
-    margin-left: -492px;
+    margin-left: -452px;
     background: rgba(0, 0, 0, 0);
 }
 
 #aboutRaymn{
     position: relative;
-    top: 180px;
+    top: 220px;
     left: 50%;
-    margin-left: -280px;
-    -webkit-animation: aboutRaymn 1s linear 0s infinite alternate;
+    margin-left: -200px;
 }
 
 #card1,

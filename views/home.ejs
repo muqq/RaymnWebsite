@@ -18,6 +18,7 @@
     <div id="section0_1">
       <p id="p1"></p>
       <p id="p2"></p>
+      <p id="p3"></p>
     </div>
     <img id="scroll" src="img/LoginView/scroll.png"/>
     <img id="arrow" src="img/LoginView/arrow.png"/>
@@ -26,8 +27,8 @@
     <img id="aboutRaymn" src="img/About/raymn.png"/>
     <div id="section1_1">
       <div id="{{data.id}}" ng-click="clickCard(data.number)" ng-repeat="data in data">
-        <img class="nameImg" ng-src="{{data.nameImg}}" ng-mouseover="photoImgShow(data.number)" ng-mouseleave="photoImgHide(data.number)"/><br>
-        <img class="photoImg" id="photoImg{{data.number}}" ng-src="{{data.img}}" ng-mouseover="photoImgShowAgain(data.number)" ng-mouseleave="photoImgHide(data.number)">
+        <img class="nameImg" ng-src="{{data.nameImg}}" ng-mouseenter="photoImgShow(data.number)" ng-mouseleave="photoImgHide(data.number)"/><br>
+        <img class="photoImg" id="photoImg{{data.number}}" ng-src="{{data.img}}" ng-mouseenter="photoImgShowAgain(data.number)" ng-mouseleave="photoImgHide(data.number)">
         <div class="photoBorder"></div>
       </div>
     </div>

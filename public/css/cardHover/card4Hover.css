@@ -1,9 +1,9 @@
 #card4:hover {
-    -moz-transform:translatex(0px, -70px);
-    -ms-transform:translatex(0px, -70px);
-    -o-transform:translatex(0px, -70px);
-    -webkit-transform: translate(0px, -70px);
-    transform: translate(0px, -70px);
+    -moz-transform:translatex(0px, -50px);
+    -ms-transform:translatex(0px, -50px);
+    -o-transform:translatex(0px, -50px);
+    -webkit-transform: translate(0px, -50px);
+    transform: translate(0px, -50px);
     -webkit-animation: card_hover 1s linear 0s infinite alternate;
 }
 
