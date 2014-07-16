@@ -137,7 +137,10 @@ function changeText(cont1,cont2,speed){
         $scope.clickDark = function(){
             $('#section1_2').css('visibility','hidden');
             cardExplodeRe();
-            $scope.content = {};
+            $scope.apply(function(){
+                $scope.content = {};
+            });
+            
         }
 
         $scope.photoImgShow = function(cardNumber){
