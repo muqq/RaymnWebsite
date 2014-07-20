@@ -1,6 +1,7 @@
 'use strict';
 
 var opApp = angular.module('opApp', [
+    'once',
     'angularFileUpload',
     '$strap.directives',
     'opControllers'
