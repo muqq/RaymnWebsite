@@ -63,7 +63,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window',
             }
         }     
         function changeText(cont1,cont2,cont3,speed){
-            var Otext= "Raymn ";
+            var Otext= "Welcome to Raymn  ";
             var Otext2 = "A team consist of vitality , creativity and dream!"
             var Otext3 = "We design visual , build connection , we narrate brand story.";
             var Ocontent = Otext.split("");
@@ -225,6 +225,17 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window',
         }
         ]
 
+        //service page
+        $scope.serviceMove = function(number){
+            $('#white'+number).css({top: 25+'px', opacity: 1}); 
+            $('#service'+number).css({top:10+'px'}); 
+            $('#word'+number).css({opacity:1});
+        }
+        $scope.serviceQuit = function(number){
+            $('#white'+number).css({top: 15+'px', opacity: 0});    
+            $('#service'+number).css({top:0+'px'});
+            $('#word'+number).css({opacity:0});
+        }
         size();
         changeText($("#p1"),$("#p2"),$("#p3"),50);
 

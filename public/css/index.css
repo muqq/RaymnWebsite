@@ -122,9 +122,10 @@
 #section0_1 p {
     position: relative;
     margin: 0px;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold; 
     color: white ;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 #scroll{
@@ -324,7 +325,150 @@
 }
 
 #section2 {
-    background: #CCFF66;
+    background: #CCFF00;
+}
+
+#section2_1 {
+    position: relative;
+    top: 25%;
+    left: 50%;
+    height: 300px;
+    width: 900px;
+    margin-top: 0px;
+    margin-left: -452px;
+    background: rgba(0, 0, 0, 0);
+}
+
+#shadow0{
+    position: absolute;
+    left:50px;
+    top:10px; 
+    float: left;
+}
+
+#service0{
+    position: absolute;
+    left:50px;
+    top:0px;
+    float: left ;
+    -moz-transition: 0.5s ease-in 0s;
+    -ms-transition: 0.5s ease-in 0s;
+    -o-transition: 0.5s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.5s ease-in 0s;
+}
+
+#white0{
+    position: absolute;
+    left:65px;
+    top:15px;
+    float: left;
+    opacity: 0;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    -webkit-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+    -moz-transition: 0.5s ease-in 0s;
+    -ms-transition: 0.5s ease-in 0s;
+    -o-transition: 0.5s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.5s ease-in 0s;
+}
+
+#word0{
+    position: absolute;
+    left:35px;
+    top:260px;
+    opacity: 0 ;
+}
+
+#shadow1{
+    position: absolute;
+    left:310px;
+    top:10px; 
+    float: left;
+}
+
+#service1{
+    position: absolute;
+    left:310px;
+    top:0px;
+    float: left ;
+    -moz-transition: 0.5s ease-in 0s;
+    -ms-transition: 0.5s ease-in 0s;
+    -o-transition: 0.5s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.5s ease-in 0s;
+}
+
+#white1{
+    position: absolute;
+    left:325px;
+    top:15px;
+    float: left;
+    opacity: 0;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    -webkit-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+    -moz-transition: 0.5s ease-in 0s;
+    -ms-transition: 0.5s ease-in 0s;
+    -o-transition: 0.5s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.5s ease-in 0s;
+}
+
+#word1{
+    position: absolute;
+    left:295px;
+    top:260px;
+    opacity: 0 ;
+}
+
+#shadow2{
+    position: absolute;
+    left:570px;
+    top:10px; 
+    float: left;
+}
+
+#service2{
+    position: absolute;
+    left:570px;
+    top:0px;
+    float: left ;
+    -moz-transition: 0.5s ease-in 0s;
+    -ms-transition: 0.5s ease-in 0s;
+    -o-transition: 0.5s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.5s ease-in 0s;
+}
+
+#white2{
+    position: absolute;
+    left:585px;
+    top:15px;
+    float: left;
+    opacity: 0;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    -webkit-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+    -moz-transition: 0.5s ease-in 0s;
+    -ms-transition: 0.5s ease-in 0s;
+    -o-transition: 0.5s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.5s ease-in 0s;
+}
+
+#word2{
+    position: absolute;
+    left:555px;
+    top:260px;
+    opacity: 0 ;
 }
 
 #section3 {
