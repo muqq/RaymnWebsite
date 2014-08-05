@@ -328,12 +328,6 @@
     background-color: #66CC66;
     text-align: center;
     z-index: 10;
-    -moz-transition: 0.2s ease-in 0s;
-    -ms-transition: 0.2s ease-in 0s;
-    -o-transition: 0.2s ease-in 0s;
-    -webkit-transition: 0.5s ease-in 0s;
-    transition: 0.2s ease-in 0s;
-    -webkit-animation: section1_2_2 1s linear 0s infinite alternate;
 }
 
 #section1_2_2 h {
@@ -373,6 +367,19 @@
     padding: 0px 30px 0px 250px;
     background-color: rgba(0, 0, 0, 0);
     border: thin solid black;
+
+}
+
+.whenClick2 {
+    -moz-transition: 0.2s ease-in 0s;
+    -ms-transition: 0.2s ease-in 0s;
+    -o-transition: 0.2s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.2s ease-in 0s;
+    -webkit-animation: section1_2_2 1s linear 0s infinite alternate;
+}
+
+.whenClick3 {
     -moz-transition: 0.2s ease-in 0s;
     -ms-transition: 0.2s ease-in 0s;
     -o-transition: 0.2s ease-in 0s;
