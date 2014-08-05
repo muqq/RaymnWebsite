@@ -46,13 +46,17 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window',
             });
         });
 
-        function cardExplode()  {
+        function cardExplode(cardNumber)  {
             var ran = new Array();
             for (var i = 0; i<11; i++) {
                 ran[i] = (Math.random()-0.5)*2000;
             }
             for (var j = 1; j<6; j++) {
-                $('#card'+j).attr('id', 'card' + j + 'WhenClick');
+                if (j != cardNumber){
+                    $('#card'+j).attr('id', 'card' + j + 'WhenClick');
+                }else{
+                    $('#card'+j+'WhenHover').attr('id', 'card' + j + 'WhenClick');
+                }
                 $('#card' + j + 'WhenClick').css({bottom: ran[j]+'px', left: ran[j+5]+'px', visibility: 'hidden'});
             }
         }
@@ -136,22 +140,25 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window',
             if($('#photoImg'+cardNumber).css('opacity')!=0){
                 $('#section1_2').css('visibility','visible');
                 $scope.content = $scope.data[cardNumber-1];
-                cardExplode();   
+                $('#section1_2_2').css('top','50%');
+                $('#section1_2_3').css('top','50%');
+                cardExplode(cardNumber);   
             }
         }
 
         $scope.clickDark = function(){
             $('#section1_2').css('visibility','hidden');
+            $('#section1_2_2').css('top','0%');
+            $('#section1_2_3').css('top','0%');
             cardExplodeRe();
         }
 
         $scope.photoImgShow = function(cardNumber){
-            $('#nameImgHover'+cardNumber).attr('href','css/cardHover/card'+cardNumber+'Hover.css');
+            $('#card'+cardNumber).attr('id','card'+cardNumber+'WhenHover');
             $('#photoImg'+cardNumber).css({cursor:'pointer'});
         }
         $scope.photoImgHide = function(cardNumber){
-            console.log('leave');
-            $('#nameImgHover'+cardNumber).attr('href','');
+            $('#card'+cardNumber+'WhenHover').attr('id','card'+cardNumber);
             $('#photoImg'+cardNumber).css({cursor:''});
         }
         $scope.photoImgShowAgain = function(cardNumber){

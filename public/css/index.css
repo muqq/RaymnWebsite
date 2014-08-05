@@ -107,6 +107,8 @@
     -webkit-transform: skew(0deg,10deg);
 }
 
+/*=========================================================================*/
+/*=========================================================================*/
 
 
 #section0 {
@@ -175,7 +177,12 @@
 #card2WhenClick,
 #card3WhenClick,
 #card4WhenClick,
-#card5WhenClick {
+#card5WhenClick,
+#card1WhenHover,
+#card2WhenHover,
+#card3WhenHover,
+#card4WhenHover,
+#card5WhenHover {
     position: relative;
     bottom: 0px;
     left: 0px;
@@ -198,6 +205,46 @@
     -o-transform-origin: 50% 50%;
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
+}
+
+#card1WhenHover:hover,
+#card2WhenHover:hover,
+#card3WhenHover:hover,
+#card4WhenHover:hover,
+#card5WhenHover:hover {
+    -moz-transform:translatex(0px, -70px);
+    -ms-transform:translatex(0px, -70px);
+    -o-transform:translatex(0px, -70px);
+    -webkit-transform: translate(0px, -70px);
+    transform: translate(0px, -70px);
+    -webkit-animation: card_hover 1s linear 0s infinite alternate;
+}
+
+#card1WhenHover:hover > .photoInCard,
+#card2WhenHover:hover > .photoInCard,
+#card3WhenHover:hover > .photoInCard,
+#card4WhenHover:hover > .photoInCard,
+#card5WhenHover:hover > .photoInCard,
+#card1WhenHover:hover > .photoImg,
+#card2WhenHover:hover > .photoImg,
+#card3WhenHover:hover > .photoImg,
+#card4WhenHover:hover > .photoImg,
+#card5WhenHover:hover > .photoImg {
+    opacity: 1;
+}
+
+#card1WhenHover:hover > .photoBorder,
+#card2WhenHover:hover > .photoBorder,
+#card3WhenHover:hover > .photoBorder,
+#card4WhenHover:hover > .photoBorder,
+#card5WhenHover:hover > .photoBorder {
+    opacity: 1;
+    -moz-transform: translate(8px, 8px);
+    -ms-transform: translate(8px, 8px);
+    -o-transform: translate(8px, 8px);
+    -webkit-transform: translate(8px, 8px);
+    transform: translate(8px, 8px);
+    -webkit-animation: card_hover_photoBorder 1s linear 0s infinite alternate;
 }
 
 .nameImg {
@@ -240,7 +287,7 @@
     width: 150px;
     left: 4px;
     opacity: 0;
-    border: 1px solid #66CC66;
+    border: thin solid black;
 
     -moz-transition: 0.5s ease-in 0s;
     -ms-transition: 0.5s ease-in 0s;
@@ -273,7 +320,7 @@
     height: 250px;
     width: 550px;
     left: 50%;
-    top: 50%;
+    top: 0%;
     margin-top: -125px;
     margin-left: -415px;
     padding: 0px 30px 0px 250px;
@@ -281,6 +328,11 @@
     background-color: #66CC66;
     text-align: center;
     z-index: 10;
+    -moz-transition: 0.2s ease-in 0s;
+    -ms-transition: 0.2s ease-in 0s;
+    -o-transition: 0.2s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.2s ease-in 0s;
     -webkit-animation: section1_2_2 1s linear 0s infinite alternate;
 }
 
@@ -315,12 +367,17 @@
     height: 250px;
     width: 550px;
     left: 50%;
-    top: 50%;
+    top: 0%;
     margin-top: -122px;
     margin-left: -412px;
     padding: 0px 30px 0px 250px;
     background-color: rgba(0, 0, 0, 0);
     border: thin solid black;
+    -moz-transition: 0.2s ease-in 0s;
+    -ms-transition: 0.2s ease-in 0s;
+    -o-transition: 0.2s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.2s ease-in 0s;
     -webkit-animation: section1_2_3 1s linear 0s infinite alternate;
 }
 
@@ -513,9 +570,9 @@
 }
 
 @-webkit-keyframes card_hover_photoBorder {
-    0%   {top: 60px; left: 2px; border-color: #66CC66}
-    50%  {top: 63px; left: 5px; border-color: black}
-    100% {top: 60px; left: 2px; border-color: #66CC66}
+    0%   {top: 60px; left: 2px}
+    50%  {top: 63px; left: 5px}
+    100% {top: 60px; left: 2px}
 }
 
 @-webkit-keyframes section1_2_2 {
