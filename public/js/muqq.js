@@ -142,6 +142,8 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window',
                 $scope.content = $scope.data[cardNumber-1];
                 $('#section1_2_2').css('top','50%');
                 $('#section1_2_3').css('top','50%');
+                $('#section1_2_2').attr('class','whenClick2');
+                $('#section1_2_3').attr('class','whenClick3');
                 cardExplode(cardNumber);   
             }
         }
@@ -150,6 +152,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window',
             $('#section1_2').css('visibility','hidden');
             $('#section1_2_2').css('top','0%');
             $('#section1_2_3').css('top','0%');
+
             cardExplodeRe();
         }
 
