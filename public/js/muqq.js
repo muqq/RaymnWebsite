@@ -19,7 +19,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 $('#card' + i).css({bottom:-200*i, opacity:0});
             } 
             $('#fullpage').fullpage({
-                anchors: ['Page0', 'Page1', 'Page2', 'Page3', 'Page4', 'Page5'],
+                anchors: ['Home', 'About', 'Service', 'News', 'Work', 'Contact'],
                 afterLoad: function(anchorLink, index){
                     $scope.changeColor(index-1);
                 },
