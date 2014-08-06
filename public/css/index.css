@@ -575,7 +575,7 @@
     left: 50%;
     top: 30%;
     margin-top: 0px;
-    margin-left: -415px;
+    margin-left: -475px;
     padding: 0px 30px 0px 250px;
     background-color: rgba(0, 0, 0, 0);
 /*    text-align: center;*/
@@ -584,7 +584,7 @@
 
 #section5_1_1 {
     position: absolute;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: -2px;
     width: 400px;
     background-color: #66FFCC;
@@ -597,6 +597,7 @@
     margin: 2px;
     font-size: 14px;
     color: white ;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 #section5_1_2 {
@@ -607,16 +608,16 @@
 
 #section5_1_2_1 {
     position: absolute;
-    width:300px;
+    width:352px;
     background-color: yellow;
-    margin-top: 32px;
+    margin-top: 30px;
 /*    margin-top: 64px;*/
     opacity: 0;
     font-size: 18px;
     border-color: rgba(0, 0, 0, 0);
     border-radius: 8px;
     z-index: 8;
-    
+    outline: none ;
     //=====change=====
     -moz-transition: 1s linear 0s;
     -ms-transition: 1s linear 0s;
@@ -638,7 +639,7 @@
 
 #section5_1_2_2 {
     position: absolute;
-    width:300px;
+    width:352px;
     background-color: yellow;
     margin-top: 50px;
 /*    margin-top: 82px;*/
@@ -647,7 +648,7 @@
     border-color: rgba(0, 0, 0, 0);
     border-radius: 8px;
     z-index: 6;
-    
+    outline: none ;
     //=====change=====
     -moz-transition: 0.8s linear 0.2s;
     -ms-transition: 0.8s linear 0.2s;
@@ -669,7 +670,7 @@
 
 #section5_1_2_3 {
     position: absolute;
-    width:300px;
+    width:352px;
     background-color: yellow;
     margin-top: 68px;
 /*    margin-top: 102px;*/
@@ -678,7 +679,7 @@
     border-color: rgba(0, 0, 0, 0);
     border-radius: 8px;
     z-index: 4;
-    
+    outline: none ;
     //=====change=====
     -moz-transition: 0.6s linear 0.4s;
     -ms-transition: 0.6s linear 0.4s;
@@ -700,7 +701,7 @@
 
 #section5_1_2_4 {
     position: absolute;
-    width: 300px;
+    width: 352px;
     height: 120px;
     background-color: yellow;
     margin-top: -12px;
@@ -710,7 +711,7 @@
     border-color: rgba(0, 0, 0, 0);
     border-radius: 8px;
     z-index: 2;
-    
+    outline: none ;
     //=====change=====
     -moz-transition: 0.4s linear 0.6s;
     -ms-transition: 0.4s linear 0.6s;
@@ -723,7 +724,7 @@
     position: absolute;
     width: 40px;
     margin-top: 300px;
-    margin-left: 268px;
+    margin-left: 320px;
 }
 
 #section5_1_3 p {
@@ -733,7 +734,10 @@
     font-weight: bold;
     color: white;
     cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
 }
+
+
 
 @-webkit-keyframes arrow {
     0%   {bottom:165px;}
