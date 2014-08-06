@@ -1,5 +1,5 @@
 'use strict';
-
+var apiServer = 'http://raymn.com.tw:8080/api/'; // Staging
 var opApp = angular.module('opApp', [
     'once',
     'angularFileUpload',
@@ -12,8 +12,8 @@ var opApp = angular.module('opApp', [
 var opControllers = angular.module('opControllers', []);
 
 
-opControllers.controller('op-home-control', ['$scope', '$http', '$window',
-    function($scope, $http, $window) {
+opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$model',
+    function($scope, $http, $window, $model) {
         $(document).ready(function() {
             for (var i = 1 ; i<6 ; i++){
                 $('#card' + i).css({bottom:-200*i, opacity:0});
@@ -40,6 +40,26 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window',
                         for (var i = 1 ; i<6 ; i++){
                             $('#card' + i).css({bottom:+200*i, opacity:0});
                         } 
+                    }
+                    if (direction==6){
+                        setTimeout(function(){
+                            $('#section5_1_2_1').attr('style','margin-top: 66px ; opacity:1;');
+                            $('#section5_1_2_2').attr('style','margin-top: 84px ; opacity:1;');
+                            $('#section5_1_2_3').attr('style','margin-top: 103px ; opacity:1;');
+                            $('#section5_1_2_4').attr('style','margin-top: 120px ; opacity:1;');
+                            typeMachine();
+                        },500);
+                    }else{
+                        setTimeout(function(){
+                            $('#section5_1_2_1').attr('style','margin-top: 32px ; opacity:0;');
+                            $('#section5_1_2_2').attr('style','margin-top: 50px ; opacity:0;');
+                            $('#section5_1_2_3').attr('style','margin-top: 68px ; opacity:0;');
+                            $('#section5_1_2_4').attr('style','margin-top: -12px ; opacity:0;');
+                            $('#p5_1_1_1').html("");
+                            $('#p5_1_1_2').html("");
+                            $('#p5_1_1_3').html("");
+                            $('#p5_1_3').html("");  
+                        },750);
                     }
                     
                 }
@@ -246,9 +266,93 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window',
             $('#service'+number).css({top:0+'px'});
             $('#word'+number).css({opacity:0});
         }
+        //contact page
+        function typeMachine()  {
+            var text= "LEAVE A MESSGE TO US!";
+            var text2 = "WE ARE LOOKING FORWARD TO HEARING YOUR IDEAS  "
+            var text3 = "AND WILL CONTACT YOU SOON !  ";
+            var text4 = "SEND"
+            var content = text.split("");
+            var content2 = text2.split("");
+            var content3 = text3.split("");
+            var content4 = text4.split("");
+            var counter = 0 ;
+            var counter2 = 0;
+            var counter3 = 0 ;
+            var counter4 = 0 ;
+            setInterval(function(){
+                if (counter < text.length){
+                    $('#p5_1_1_1').append(text[counter]);
+                    counter += 1; 
+                }else if (counter2 < text2.length){
+                    $('#p5_1_1_2').append(text2[counter2]);
+                    counter2 += 1;  
+                }else if (counter3 <text3.length){
+                    $('#p5_1_1_3').append(text3[counter3]);
+                    counter3 += 1;    
+                }else if (counter4 <text4.length){
+                    $('#p5_1_3').append(text4[counter4]);
+                    counter4 += 1;      
+                }
+            },50);
+        }
+        $scope.Email = {};
+        $scope.email = function(){
+            if (checkEmail($scope.Email)){
+                console.log('ok');
+                $model.Contact.contactUs($scope.Email, function(err, res){
+                    if(err) alert(err);
+                    else {
+                        alert(res);
+                        $scope.Email = {};
+                    }
+                });
+            }else{
+                alert('請輸入完整資料');
+            }
+        }
+
         size();
         changeText($("#p1"),$("#p2"),$("#p3"),50);
 
 
     }
     ]);
+
+//model
+opControllers.factory('$model' , function($http){
+    return {
+        Contact : {
+            contactUs : function(emailData, callback){          
+                $http.post(apiServer + 'ContactUs',emailData,  config).success(function(resp){
+                    console.log(resp);
+                    if (resp.error) callback(resp.error);
+                    else{
+                        callback(null, 'Thank you! We will contact with you ASAP!');
+                    }
+                }).error(function(err){
+                    callback(err);
+                });
+                
+            }
+        }
+    }
+});
+
+//http config
+var config = {
+    headers: {
+        'Content-Type' : 'application/json',
+        'Authorization': 'Basic ZWExMzVkZGIzZGZhNTY0NDMzMGRmYTEwN2FmZjgxNjE=',
+    }
+}
+
+//check Category input
+var checkEmail = function(data){
+  console.log(data);
+  if(!data.name) return false ;
+  if(!data.email) return false ;  
+  if(!data.title) return false ;
+  if(!data.content) return false ;
+  return true ;
+}
