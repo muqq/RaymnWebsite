@@ -258,6 +258,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
 
         //service page
         $scope.serviceMove = function(number){
+            console.log('mouseover'+number);
             $('#white'+number).css({top: 25+'px', opacity: 1}); 
             $('#service'+number).css({top:10+'px'}); 
             $('#word'+number).css({opacity:1});
