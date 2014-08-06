@@ -299,7 +299,6 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 }
             },50);
         }
-        $scope.Email = {};
         $scope.email = function(){
             if (checkEmail($scope.Email)){
                 console.log('ok');
@@ -314,7 +313,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 alert('請輸入完整資料');
             }
         }
-
+        $scope.Email = {};
         size();
         changeText($("#p1"),$("#p2"),$("#p3"),50);
 
