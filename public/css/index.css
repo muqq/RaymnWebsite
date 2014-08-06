@@ -153,12 +153,12 @@
 
 #section1_1 {
     position: relative;
-    top: 50%;
+    top: 340px;
     left: 50%;
     height: 300px;
     width: 900px;
     margin-top: -90px;
-    margin-left: -452px;
+    margin-left: -465px;
     background: rgba(0, 0, 0, 0);
 }
 
@@ -166,7 +166,7 @@
     position: relative;
     top: 220px;
     left: 50%;
-    margin-left: -200px;
+    margin-left: -215px;
 }
 
 #card1,
@@ -213,11 +213,11 @@
 #card3WhenHover:hover,
 #card4WhenHover:hover,
 #card5WhenHover:hover {
-    -moz-transform:translatex(0px, -70px);
-    -ms-transform:translatex(0px, -70px);
-    -o-transform:translatex(0px, -70px);
-    -webkit-transform: translate(0px, -70px);
-    transform: translate(0px, -70px);
+    -moz-transform:translatex(0px, -30px);
+    -ms-transform:translatex(0px, -30px);
+    -o-transform:translatex(0px, -30px);
+    -webkit-transform: translate(0px, -30px);
+    transform: translate(0px, -30px);
     -webkit-animation: card_hover 1s linear 0s infinite alternate;
 }
 
@@ -725,6 +725,7 @@
     width: 40px;
     margin-top: 300px;
     margin-left: 320px;
+    z-index: 10;
 }
 
 #section5_1_3 p {

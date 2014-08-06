@@ -50,15 +50,16 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                             typeMachine();
                         },500);
                     }else{
+                        clearInterval(contactInterval);
+                        $('#p5_1_1_1').html("");
+                        $('#p5_1_1_2').html("");
+                        $('#p5_1_1_3').html("");
+                        $('#p5_1_3').html(""); 
                         setTimeout(function(){
                             $('#section5_1_2_1').attr('style','margin-top: 32px ; opacity:0;');
                             $('#section5_1_2_2').attr('style','margin-top: 50px ; opacity:0;');
                             $('#section5_1_2_3').attr('style','margin-top: 68px ; opacity:0;');
-                            $('#section5_1_2_4').attr('style','margin-top: -12px ; opacity:0;');
-                            $('#p5_1_1_1').html("");
-                            $('#p5_1_1_2').html("");
-                            $('#p5_1_1_3').html("");
-                            $('#p5_1_3').html("");  
+                            $('#section5_1_2_4').attr('style','margin-top: -12px ; opacity:0;'); 
                         },750);
                     }
                     
@@ -267,6 +268,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             $('#word'+number).css({opacity:0});
         }
         //contact page
+        var contactInterval ;
         function typeMachine()  {
             var text= "LEAVE A MESSGE TO US!";
             var text2 = "WE ARE LOOKING FORWARD TO HEARING YOUR IDEAS  "
@@ -280,7 +282,8 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             var counter2 = 0;
             var counter3 = 0 ;
             var counter4 = 0 ;
-            setInterval(function(){
+
+            contactInterval = setInterval(function(){
                 if (counter < text.length){
                     $('#p5_1_1_1').append(text[counter]);
                     counter += 1; 
