@@ -346,7 +346,6 @@ opControllers.factory('$model' , function($http){
 var config = {
     headers: {
         'Content-Type' : 'application/json',
-        'Authorization': 'Basic ZWExMzVkZGIzZGZhNTY0NDMzMGRmYTEwN2FmZjgxNjE=',
     }
 }
 
