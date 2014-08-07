@@ -193,10 +193,6 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             }
         }
 
-        function test(cardNumber){
-            console.log(cardNumber);
-        }
-
         $(document).keyup(function(e) {
             if (e.keyCode == 27) { 
                 $scope.clickDark();
@@ -335,8 +331,7 @@ opControllers.factory('$model' , function($http){
                     }
                 }).error(function(err){
                     callback(err);
-                });
-                
+                });    
             }
         }
     }
