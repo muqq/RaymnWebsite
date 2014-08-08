@@ -68,7 +68,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
         });
 
         function cardExplode(cardNumber)  {
-            var ran = new Array();
+            var ran = [];
             for (var i = 0; i<11; i++) {
                 ran[i] = (Math.random()-0.5)*2000;
             }
@@ -199,58 +199,6 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             }   // esc
         });
 
-        $scope.data = [
-        {
-            number : 1,
-            id: 'card1',
-            nameImg: 'img/About/ms.png',
-            img: 'img/About/photo_1.jpg',
-            allName:'Muqq Shih',
-            title:'CEO',
-            photoId :'photo1',
-            p1:'話說天下大勢．分久必合，合久必分：周末七國分爭，并入於秦。及秦滅之後，楚、漢分爭，又并入於漢。漢朝自高祖斬白蛇而起義，一統天下。後來光武中興，傳至獻帝，遂分為三國。'
-        },
-        {
-            number : 2,
-            id: 'card2',
-            nameImg: 'img/About/sk.png',
-            img: 'img/About/photo_2.jpg',
-            allName:'Sprout Kuo',
-            title:'CTO',
-            photoId :'photo2',
-            p1:'話說天下大勢．分久必合，合久必分：周末七國分爭，并入於秦。及秦滅之後，楚、漢分爭，又并入於漢。漢朝自高祖斬白蛇而起義，一統天下。後來光武中興，傳至獻帝，遂分為三國。'          
-        },
-        {
-            number : 3 ,
-            id: 'card3',
-            nameImg: 'img/About/yk.png',
-            img: 'img/About/photo_3.jpg',
-            allName:'Youlanda Kuo',
-            title:'Desinger',
-            photoId :'photo3',
-            p1:'話說天下大勢．分久必合，合久必分：周末七國分爭，并入於秦。及秦滅之後，楚、漢分爭，又并入於漢。漢朝自高祖斬白蛇而起義，一統天下。後來光武中興，傳至獻帝，遂分為三國。'
-        },
-        {
-            number : 4 ,
-            id: 'card4',
-            nameImg: 'img/About/sf.png',
-            img: 'img/About/photo_4.jpg',
-            allName:'Shaofu',
-            title:'Manager',
-            photoId :'photo4',
-            p1:'話說天下大勢．分久必合，合久必分：周末七國分爭，并入於秦。及秦滅之後，楚、漢分爭，又并入於漢。漢朝自高祖斬白蛇而起義，一統天下。後來光武中興，傳至獻帝，遂分為三國。'  
-        },
-        {
-            number : 5 ,
-            id: 'card5',
-            nameImg: 'img/About/nn.png',
-            img: 'img/About/photo_5.jpg',
-            allName:'Niao Niao',
-            title:'Mascot',
-            photoId :'photo5',
-            p1:'話說天下大勢．分久必合，合久必分：周末七國分爭，并入於秦。及秦滅之後，楚、漢分爭，又并入於漢。漢朝自高祖斬白蛇而起義，一統天下。後來光武中興，傳至獻帝，遂分為三國。'
-        }
-        ]
 
         //service page
         $scope.serviceMove = function(number){
@@ -310,6 +258,13 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 alert('請輸入完整資料');
             }
         }
+        $model.About.users(function(err, res){
+            if (err) alert(err);
+            else {
+                $scope.data = res ;
+                $scope.data.sort(function(a,b) { return parseInt(a.number) - parseInt(b.number) } );
+            }
+        });
         $scope.Email = {};
         size();
         changeText($("#p1"),$("#p2"),$("#p3"),50);
@@ -323,7 +278,7 @@ opControllers.factory('$model' , function($http){
     return {
         Contact : {
             contactUs : function(emailData, callback){          
-                $http.post(apiServer + 'ContactUs',emailData,  config).success(function(resp){
+                $http.post(apiServer + 'ContactUs', emailData,  config).success(function(resp){
                     console.log(resp);
                     if (resp.error) callback(resp.error);
                     else{
@@ -332,6 +287,17 @@ opControllers.factory('$model' , function($http){
                 }).error(function(err){
                     callback(err);
                 });    
+            }
+        },
+        About :{
+            users : function(callback){
+                $http.get(apiServer + 'GetUser', config).success(function(resp){
+                    console.log(resp);
+                    if (resp.error) callback(resp.error);
+                    else callback(null, resp);
+                }).error(function(err){
+                    callback(err);
+                });
             }
         }
     }
