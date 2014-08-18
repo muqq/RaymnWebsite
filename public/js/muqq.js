@@ -23,6 +23,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 afterLoad: function(anchorLink, index){
                     $scope.changeColor(index-1);
                 },
+                normalScrollElements: '#section1_2_2_1, #section3_4_2_1',
                 onLeave: function(index, direction){
                     console.log(index, direction);
                     if (direction==2){
@@ -88,15 +89,14 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             }
         }     
         function changeText(cont1,cont2,cont3,speed){
-            var Otext= "Welcome to Raymn  ";
-            var Otext2 = "A team consist of vitality , creativity and dream!"
-            var Otext3 = "We design visual , build connection , we narrate brand story.";
-            var Ocontent = Otext.split("");
-            var Ocontent2 = Otext2.split("");
-            var Ocontent3 = Otext3.split("");
-            console.log(Ocontent.length, Ocontent2.length, Ocontent3.length);
-            var interval ;
-            var counter = 0 ;
+            var Otext= "Welcome to Raymn  ",
+                Otext2 = "A team consist of vitality , creativity and dream!",
+                Otext3 = "We design visual , build connection , we narrate brand story.",
+                Ocontent = Otext.split(""),
+                Ocontent2 = Otext2.split(""),
+                Ocontent3 = Otext3.split(""),
+                interval ,
+                counter = 0;
             function showLine(textArray, htmlText, htmlClass){
                 if (counter<textArray.length){
                     htmlText.append(textArray[counter]);
@@ -192,27 +192,6 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
 
             }
         }
-
-        $(document).keyup(function(e) {
-            if (e.keyCode == 27) { 
-                $scope.clickDark();
-                $scope.clickDark2();
-            }   // esc
-            if (e.keyCode == 37){
-                $scope.newsLStop();
-            }
-            if (e.keyCode == 39){
-                $scope.newsRStop();
-            }
-        });
-        $(document).keydown(function(e){
-            if (e.keyCode == 37){
-                $scope.newsLeft();
-            }
-            if (e.keyCode == 39){
-                $scope.newsRight();
-            }
-        });
 
 
         //service page
@@ -380,13 +359,33 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
         //web init
 
         //news page init
-        var right = 0;
-        var keR = true;
-        var keL = true;
-        var repeatL = false;
-        var repeatR = false;
-        var newsWidth = 262;
-        var s31ml = [];
+        $(document).keyup(function(e) {
+            if (e.keyCode == 27) { 
+                $scope.clickDark();
+                $scope.clickDark2();
+            }   // esc
+            if (e.keyCode == 37){
+                $scope.newsLStop();
+            }
+            if (e.keyCode == 39){
+                $scope.newsRStop();
+            }
+        });
+        $(document).keydown(function(e){
+            if (e.keyCode == 37){
+                $scope.newsLeft();
+            }
+            if (e.keyCode == 39){
+                $scope.newsRight();
+            }
+        });
+        var right = 0,
+            keR = true,
+            keL = true,
+            repeatL = false,
+            repeatR = false,
+            newsWidth = 262,
+            s31ml = [];
         /////////////////
         $model.About.users(function(err, res){
             if (err) alert(err);
@@ -416,10 +415,8 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
         $scope.Email = {};
         size();
         changeText($("#p1"),$("#p2"),$("#p3"),50);
-        console.log('service:left:' + $('#side03').css('width'));
-
     }
-    ]);
+]);
 
 //model
 opControllers.factory('$model' , function($http){
