@@ -198,6 +198,20 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 $scope.clickDark();
                 $scope.clickDark2();
             }   // esc
+            if (e.keyCode == 37){
+                $scope.newsLStop();
+            }
+            if (e.keyCode == 39){
+                $scope.newsRStop();
+            }
+        });
+        $(document).keydown(function(e){
+            if (e.keyCode == 37){
+                $scope.newsLeft();
+            }
+            if (e.keyCode == 39){
+                $scope.newsRight();
+            }
         });
 
 
