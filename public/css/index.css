@@ -1,3 +1,8 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
 .frame {
     position: fixed;
     z-index: 10;
@@ -567,9 +572,277 @@
     transition: opacity 0.5s ease-out;
 }
 
+
+/*==================================================================================================
+====================================================================================================
+==================================================================================================*/
 #section3 {
     background: #97FF97;
 }
+
+#section3_1 {
+    position: relative;
+    top: 35%;
+    left: 0%;
+    height: 300px;
+    width: 262px;
+    margin-top: -110px;
+    margin-left: 80px;
+    background: rgba(0, 0, 0, 0);
+    //=====change=====
+    -moz-transition: 0.5s ease-out;
+    -ms-transition: 0.5s ease-out;
+    -o-transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-out;
+    transition:0.5s ease-out;
+    
+}
+
+.news {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px 20px 0px 20px;
+    float:right;
+    z-index: 8;
+    cursor: auto;
+    visibility: visible;
+    -moz-transition: 0.5s ease-out;
+    -ms-transition: 0.5s ease-out;
+    -o-transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-out;
+    transition:0.5s ease-out;
+}
+
+#news5,
+#news6,
+#news7,
+#news8,
+#news9,
+#news10 {
+    opacity: 1;
+/*    top: -50px;*/
+}
+
+.newsBackground {
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+}
+
+.newsFront {
+/*    position: relative;*/
+    position: absolute;
+/*    top: -236px;*/
+    top: -15px;
+    left: 0px;
+}
+
+.newsWhite {
+/*    position: relative;*/
+    position: absolute;
+/*    top: -444px;*/
+    top: 0px;
+    left: 14px;
+    opacity: 0;
+    -moz-transition: 0.5s ease-out;
+    -ms-transition: 0.5s ease-out;
+    -o-transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-out;
+    transition:0.5s ease-out;
+}
+
+.newsTitle {
+    position: absolute;
+    top: 230px;
+    height: 30px;
+    width: 220px;
+    text-align: center;
+    font-size: 26px;
+    color: blue;
+}
+
+.newsDate {
+/*    position: relative;*/
+    position: absolute;
+/*    top: -564px;*/
+    top: 70px;
+    left: 0px;
+    height: 30px;
+    width: 220px;
+    text-align: center;
+    font-size: 26px;
+    color: blue;
+}
+
+.newsMove {
+    position: absolute;
+    top: 0px;
+    cursor: pointer;
+    -moz-transition: 0.5s ease-out;
+    -ms-transition: 0.5s ease-out;
+    -o-transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-out;
+    transition:0.5s ease-out;
+}
+
+.newsMove:hover {
+    top: 15px;
+/*
+    -moz-transform:translatex(0px, 14px);
+    -ms-transform:translatex(0px, 14px);
+    -o-transform:translatex(0px, 14px);
+    -webkit-transform: translate(0px, 14px);
+    transform: translate(0px, 14px);
+*/
+}
+
+.newsMove:hover > .newsWhite {
+    opacity: 1;
+}
+
+#section3_2 {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    height: 450px;
+    width: 80px;
+    margin-top: -140px;
+    margin-left: 0px;
+/*    margin-left: 20px;*/
+/*    background: rgba(100, 255, 100, 1);*/
+/*    background: #97FF97;*/
+    background: -moz-linear-gradient(left,  rgba(151,255,151,1) 0%, rgba(151,255,151,0) 95%, rgba(151,255,151,0) 100%);  FF3.6+ 
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(151,255,151,1)), color-stop(95%,rgba(151,255,151,0)), color-stop(100%,rgba(151,255,151,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(151,255,151,1) 0%,rgba(151,255,151,0) 95%,rgba(151,255,151,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(151,255,151,1) 0%,rgba(151,255,151,0) 95%,rgba(151,255,151,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(151,255,151,1) 0%,rgba(151,255,151,0) 95%,rgba(151,255,151,0) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgba(151,255,151,1) 0%,rgba(151,255,151,0) 95%,rgba(151,255,151,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97ff97', endColorstr='#0097ff97',GradientType=1 ); /* IE6-9 */
+    z-index: 9;
+}
+
+
+#section3_3 {
+    position: relative;
+    top: 0%;
+    left: 100%;
+    height: 450px;
+    width: 250px;
+    margin-top: -460px;
+/*    margin-left: 1008px;*/
+    margin-left: -250px;
+/*    background: rgba(100, 255, 100, 0);*/
+/*    background: #97FF97;*/
+    background: -moz-linear-gradient(left,  rgba(151,255,151,0) 0%, rgba(151,255,151,1) 40%, rgba(151,255,151,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(151,255,151,0)), color-stop(40%,rgba(151,255,151,1)), color-stop(100%,rgba(151,255,151,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(151,255,151,0) 0%,rgba(151,255,151,1) 40%,rgba(151,255,151,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(151,255,151,0) 0%,rgba(151,255,151,1) 40%,rgba(151,255,151,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(151,255,151,0) 0%,rgba(151,255,151,1) 40%,rgba(151,255,151,1) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgba(151,255,151,0) 0%,rgba(151,255,151,1) 40%,rgba(151,255,151,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0097ff97', endColorstr='#97ff97',GradientType=1 ); /* IE6-9 */
+
+    z-index: 9;
+}
+
+
+
+#section3_4 {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100% ;
+    z-index: 20;
+    visibility: hidden;
+}
+
+#section3_4_1 {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100% ;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#section3_4_2 {
+    position: absolute;
+    height: 250px;
+    width: 550px;
+    left: 50%;
+/*    top: 50%;*/
+    top: 0%;
+    margin-top: -125px;
+    margin-left: -415px;
+    padding: 0px 30px 0px 250px;
+    color: white;
+    background-color: #3366FF;
+    text-align: center;
+    z-index: 10;
+
+    /*=====change=====*/
+    -moz-transition: 0.2s ease-in 0s;
+    -ms-transition: 0.2s ease-in 0s;
+    -o-transition: 0.2s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.2s ease-in 0s;
+    -webkit-animation: section1_2_2 1s linear 0s infinite alternate;
+}
+
+#section3_4_2 h {
+    position: relative;
+    font-size: 26px;
+    left: -210px;
+
+}
+
+#section3_4_2 p {
+    margin: 5px;
+    font-size: 18px;
+    text-align: left; 
+}
+
+#newsPhoto {
+    position: absolute;
+    width: 200px ;
+    top: 25px;
+    left: 25px;
+    float: left;
+}
+
+#close2 {
+    position: relative;
+    right: -20px;
+    top: -8px;
+    width: 16px;
+    float: right;
+    cursor: pointer;
+}
+
+#section3_4_3 {
+    position: absolute;
+    height: 250px;
+    width: 550px;
+    left: 50%;
+    top: 0%;
+    margin-top: -122px;
+    margin-left: -412px;
+    padding: 0px 30px 0px 250px;
+    background-color: rgba(0, 0, 0, 0);
+    border: thin solid black;
+
+    /*=====change=====*/
+    -moz-transition: 0.2s ease-in 0s;
+    -ms-transition: 0.2s ease-in 0s;
+    -o-transition: 0.2s ease-in 0s;
+    -webkit-transition: 0.5s ease-in 0s;
+    transition: 0.2s ease-in 0s;
+    -webkit-animation: section1_2_3 1s linear 0s infinite alternate;
+}
+
 
 #section4 {
     background: #66FF99;

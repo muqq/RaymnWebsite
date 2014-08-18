@@ -196,6 +196,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
         $(document).keyup(function(e) {
             if (e.keyCode == 27) { 
                 $scope.clickDark();
+                $scope.clickDark2();
             }   // esc
         });
 
@@ -212,6 +213,129 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             $('#service'+number).css({top:0+'px'});
             $('#word'+number).css({opacity:0});
         }
+        //news page
+        var right = 0;
+        var keR = true;
+        var keL = true;
+        var repeatL = false;
+        var repeatR = false;
+
+        var newsWidth = 262;
+
+        var s31ml = new Array();
+        for (var j = 0; j<51; j++) {
+            s31ml[j] = 80 - newsWidth*j;
+        }
+        // s31ml = [80, -182, -444, -706, -968 .....]
+        var s31w =  new Array();
+        for (var j = 0; j<51; j++) {
+            s31w[j] = (newsWidth)*j;
+        }
+        // s31w = [262, 524, 786, 1048, 1310 .....]
+
+        $scope.newsLeft = function() {
+            if (!repeatL) {
+                if (right > 0) {
+                    var elem = document.getElementById("section3_1");
+        //          elem.setAttribute("style","margin-left: "+s31ml[right-1]+"px;");
+                    elem.style.marginLeft = s31ml[right-1] +"px";
+                    right--;
+                }
+                repeatL = true;
+                setTimeout(function() {
+                    newsKeepLeft();
+                }, 300);
+            } else {
+
+            }
+        }
+
+        $scope.newsRight = function() {
+            console.log('newsright mouseover');
+            if ($scope.news.length > 4) {
+                if (!repeatR) {
+                    if (right < $scope.news.length-4) {
+                        var elem = document.getElementById("section3_1");
+        //                elem.setAttribute("style","margin-left: "+s31ml[right+1]+"px;");
+                        elem.style.marginLeft = s31ml[right+1] +"px";
+                        right++;
+                    }
+                    repeatR = true;
+                    setTimeout(function() {
+                        newsKeepRight();
+                    }, 300);
+                } else {
+
+                }
+            } else {
+
+            }
+        }
+
+        $scope.newsLStop = function() {
+            keL = false;
+        }
+
+        $scope.newsRStop = function() {
+            keR = false;
+        }
+
+
+        function newsKeepRight() {
+            repeatR = false;
+            if (keR) {
+                $scope.newsRight();
+            } else {
+                keR = true;
+            }
+        }
+
+        function newsKeepLeft() {
+            repeatL = false;
+            if (keL) {
+                $scope.newsLeft();
+            } else {
+                keL = true;
+            }
+        }
+
+        $scope.clickNews = function(newsNumber) {
+            var elem = document.getElementById("section3_4");
+            elem.style.visibility = "visible";
+
+            var elem = document.getElementById("section3_4_2");
+            elem.setAttribute("style", "top: 50%;");
+            var elem = document.getElementById("section3_4_3");
+            elem.setAttribute("style", "top: 50%;");
+            console.log($scope.news);
+            var findArray = _.findIndex($scope.news, {'newsid':newsNumber});
+            $scope.newsContent = _.clone($scope.news[findArray]);
+            console.log($scope.newsContent);
+            console.log(newsNumber);
+            newsExplode();
+        }
+
+        $scope.clickDark2 = function() {
+            var elem = document.getElementById("section3_4");
+            elem.style.visibility = "hidden";
+            var elem = document.getElementById("section3_4_2");
+            elem.setAttribute("style", "top: 0%");
+            var elem = document.getElementById("section3_4_3");
+            elem.setAttribute("style", "top: 0%");
+            newsExplodeRe()
+        }
+
+        function newsExplode() {
+            $('#section3_1').css({top:'100%', opacity:0});            
+        }
+
+        function newsExplodeRe() {
+            $('#section3_1').css({top:'35%', opacity:1});
+
+        }
+
+
+
         //contact page
         var contactInterval ;
         function typeMachine()  {
@@ -268,6 +392,20 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 });
             }
         });
+        $model.News.getNews(function(err, res){
+            if (err) alert(err);
+            else {
+                $scope.news = res ;
+                $scope.news.sort(function(a,b) { 
+                    return parseInt(a.newsid) - parseInt(b.newsid) 
+                });
+                var section = document.getElementById("section3_1");
+//    section.setAttribute("style","width: "+ s31w[newsCount] +"px;");
+                section.style.width = s31w[$scope.news.length]+"px";
+                console.log($scope.news);            
+            }
+        });
+
         $scope.Email = {};
         size();
         changeText($("#p1"),$("#p2"),$("#p3"),50);
@@ -301,6 +439,17 @@ opControllers.factory('$model' , function($http){
                 }).error(function(err){
                     callback(err);
                 });
+            }
+        },
+        News :{
+            getNews : function(callback){
+                $http.get(apiServer+'GetNews' , config).success(function(resp){
+                    if (resp.error) callback(resp.error);
+                    else callback(null, resp);
+                }).error(function(err){
+                    callback(err);
+                });
+
             }
         }
     }

@@ -64,7 +64,33 @@
     </div>
   </div>
   <div class="section" id="section3">
-    news
+      <div id="section3_1">
+          <div class="news" id="news{{news.newsid}}" ng-click="clickNews(news.newsid)" ng-repeat="news in news">
+              <img class="newsBackground" id="newsBackground1" src="img/News/square_down.png"/><br>
+              <div class="newsMove">
+                  <img class="newsFront" id="newsFront1" src="img/News/square_up.png"><br>
+                  <img class="newsWhite" id="newsWhite1" src="img/News/square_trans.png"><br>
+                  <div class="newsDate" id="newsDate1">{{ news.year }}<br>{{ news.date}}</div><br>
+              </div>
+              <div class="newsTitle" id="newsTitle1">{{ news.title }}</div>
+          </div>
+      </div>
+      <div id="section3_2" ng-mouseover="newsLeft()" ng-mouseleave="newsLStop()"></div>
+      <div id="section3_3" ng-mouseover="newsRight()" ng-mouseleave="newsRStop()"></div>
+      <div id="section3_4">
+          <div id="section3_4_1" ng-click="clickDark2()"></div>
+          <div id="section3_4_2"><br>
+              <img id="newsPhoto" ng-src="{{newsContent.image}}">
+              <img id="close2" src="img/About/close.png" ng-click="clickDark2()">
+              <div id="newsText">
+                <h>{{newsContent.title}}</h>
+                <p>{{newsContent.year}}  {{newsContent.date}} {{newsContent.category}}</p>
+                <p>{{newsContent.content}}</p>
+              </div>
+          </div>
+          <div id="section3_4_3">
+          </div>
+      </div>
   </div>
   <div class="section" id="section4">
     Work
