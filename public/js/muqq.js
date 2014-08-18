@@ -214,24 +214,6 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             $('#word'+number).css({opacity:0});
         }
         //news page
-        var right = 0;
-        var keR = true;
-        var keL = true;
-        var repeatL = false;
-        var repeatR = false;
-
-        var newsWidth = 262;
-
-        var s31ml = new Array();
-        for (var j = 0; j<51; j++) {
-            s31ml[j] = 80 - newsWidth*j;
-        }
-        // s31ml = [80, -182, -444, -706, -968 .....]
-        var s31w =  new Array();
-        for (var j = 0; j<51; j++) {
-            s31w[j] = (newsWidth)*j;
-        }
-        // s31w = [262, 524, 786, 1048, 1310 .....]
 
         $scope.newsLeft = function() {
             if (!repeatL) {
@@ -256,7 +238,6 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 if (!repeatR) {
                     if (right < $scope.news.length-4) {
                         var elem = document.getElementById("section3_1");
-        //                elem.setAttribute("style","margin-left: "+s31ml[right+1]+"px;");
                         elem.style.marginLeft = s31ml[right+1] +"px";
                         right++;
                     }
@@ -279,7 +260,6 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
         $scope.newsRStop = function() {
             keR = false;
         }
-
 
         function newsKeepRight() {
             repeatR = false;
@@ -384,6 +364,16 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             }
         }
         //web init
+
+        //news page init
+        var right = 0;
+        var keR = true;
+        var keL = true;
+        var repeatL = false;
+        var repeatR = false;
+        var newsWidth = 262;
+        var s31ml = [];
+        /////////////////
         $model.About.users(function(err, res){
             if (err) alert(err);
             else {
@@ -396,14 +386,16 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
         $model.News.getNews(function(err, res){
             if (err) alert(err);
             else {
+                for (var j = 0; j<res.length; j++) {
+                    s31ml[j] = 80 - newsWidth*j;
+                }
+                // s31ml = [80, -182, -444, -706, -968 .....]
                 $scope.news = res ;
                 $scope.news.sort(function(a,b) { 
                     return parseInt(a.newsid) - parseInt(b.newsid) 
                 });
                 var section = document.getElementById("section3_1");
-//    section.setAttribute("style","width: "+ s31w[newsCount] +"px;");
-                section.style.width = s31w[$scope.news.length]+"px";
-                console.log($scope.news);            
+                section.style.width = res.length*newsWidth+"px";         
             }
         });
 
