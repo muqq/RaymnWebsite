@@ -310,11 +310,9 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             elem.setAttribute("style", "top: 50%;");
             var elem = document.getElementById("section3_4_3");
             elem.setAttribute("style", "top: 50%;");
-            console.log($scope.news);
+            
             var findArray = _.findIndex($scope.news, {'newsid':newsNumber});
             $scope.newsContent = _.clone($scope.news[findArray]);
-            console.log($scope.newsContent);
-            console.log(newsNumber);
             newsExplode();
         }
 
