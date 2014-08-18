@@ -7,7 +7,7 @@
         "p1": "I'm database analyzer,I'm engineer, I'm debuger , I am the boss.  I finish my job quick and precisely with Objective C, iOS SDK,node JS,angular JS...etc. If you're asking why I become who i am as an engineer.  There's one reason and one reason only. Because my home female dog was pregnant.",
         "img": "img/About/photo_1.jpg",
         "number": 1,
-        "title": "Programmer"
+        "title": "programmer"
     },
     {
         "id": "card2",
@@ -17,7 +17,7 @@
         "p1": "I have been single for twenty three years. I don't have girlfriend and money. I graduate from the most powerful university in Taiwan which every mortal will knee before my student card but still I don't like it.  I have nothing left except for my coding skills. Every day and night I used to get alone with Android SDK, JAVA, JavaScript, CSS3, HTML5. . All I have is coding and my teammate.",
         "img": "img/About/photo_2.jpg",
         "number": 2,
-        "title": "Programmer"
+        "title": "programmer"
     },
     {
         "id": "card3",
@@ -27,7 +27,7 @@
         "p1": "Visual identity system ,Graphic design ,Illustration . I have begun to study of design during my college.  I enjoy designing beautiful things, but also enjoying spending money lol.  If you are freely spender as I do ,let's spending money fantastically. ",
         "img": "img/About/photo_3.jpg",
         "number": 3,
-        "title": "Desinger"
+        "title": "desinger"
     },
     {
         "id": "card4",
@@ -37,7 +37,7 @@
         "p1": "話說天下大勢．分久必合，合久必分：周末七國分爭，并入於秦。及秦滅之後，楚、漢分爭，又并入於漢。漢朝自高祖斬白蛇而起義，一統天下。後來光武中興，傳至獻帝，遂分為三國。",
         "img": "img/About/photo_4.jpg",
         "number": 4,
-        "title": "Manager"
+        "title": "manager"
     },
     {
         "id": "card5",
@@ -47,6 +47,6 @@
         "p1": "Rolling , jumping , I close my eyes.  I,incarnation of meaningless,mascot of Raymn, reporting for duty. The world needs me badly just as Raymn Creative agency do . Every day I do my responsibility of keep craping to calm my teammate down. I think I did brilliant job . The world needs me, and I know it.",
         "img": "img/About/photo_5.jpg",
         "number": 5,
-        "title": "Mascot"
+        "title": "mascot"
     }
 ]
