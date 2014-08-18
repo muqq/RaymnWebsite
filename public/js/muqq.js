@@ -300,6 +300,9 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
         }
 
         $scope.clickNews = function(newsNumber) {
+            $('#section3_4_2').attr('class','whenClick2');
+            $('#section3_4_3').attr('class','whenClick3');
+
             var elem = document.getElementById("section3_4");
             elem.style.visibility = "visible";
 
