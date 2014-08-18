@@ -331,13 +331,26 @@
     z-index: 10;
 }
 
-#section1_2_2 h {
+#section1_2_2 h1 {
     font-size: 26px;
+    text-align: center; ;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 5px;
+}
+
+#section1_2_2 h2 {
+    
+    font-size: 20px;
+    text-align: center; ;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 5px;
 }
 
 #section1_2_2 p {
     margin: 5px;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left ;
 }
 
 #photo {

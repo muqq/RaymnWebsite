@@ -258,17 +258,20 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 alert('請輸入完整資料');
             }
         }
+        //web init
         $model.About.users(function(err, res){
             if (err) alert(err);
             else {
                 $scope.data = res ;
-                $scope.data.sort(function(a,b) { return parseInt(a.number) - parseInt(b.number) } );
+                $scope.data.sort(function(a,b) { 
+                    return parseInt(a.number) - parseInt(b.number) 
+                });
             }
         });
         $scope.Email = {};
         size();
         changeText($("#p1"),$("#p2"),$("#p3"),50);
-
+        console.log('service:left:' + $('#side03').css('width'));
 
     }
     ]);
@@ -291,7 +294,7 @@ opControllers.factory('$model' , function($http){
         },
         About :{
             users : function(callback){
-                $http.get(apiServer + 'GetUser', config).success(function(resp){
+                $http.get('/json/user.json').success(function(resp){
                     console.log(resp);
                     if (resp.error) callback(resp.error);
                     else callback(null, resp);
