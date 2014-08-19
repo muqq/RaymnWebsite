@@ -717,6 +717,10 @@ body {
     color: blue;
 }
 
+.newsIcon {
+    opacity: 0.7;
+}
+
 .newsDate {
 /*    position: relative;*/
     position: absolute;
@@ -728,6 +732,13 @@ body {
     text-align: center;
     font-size: 26px;
     color: blue;
+    opacity: 0;
+    -moz-transition: 0.5s ease-out;
+    -ms-transition: 0.5s ease-out;
+    -o-transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-out;
+    transition:0.5s ease-out;
+
 }
 
 .newsMove {
@@ -752,7 +763,8 @@ body {
 */
 }
 
-.newsMove:hover > .newsWhite {
+.newsMove:hover > .newsWhite,
+.newsMove:hover > .newsDate{
     opacity: 1;
 }
 
