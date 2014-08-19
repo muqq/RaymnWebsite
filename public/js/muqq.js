@@ -360,7 +360,8 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
         function replaceURLWithHTMLLinks(text){
             var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
             text = text.match(exp);
-            return text[0] ; 
+            if (text) return text[0] ; 
+            else return null ;
         }
 
         //web init
