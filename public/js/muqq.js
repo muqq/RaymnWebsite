@@ -356,6 +356,13 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 alert('請輸入完整資料');
             }
         }
+        //detect url in string
+        function replaceURLWithHTMLLinks(text){
+            var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+            text = text.match(exp);
+            return text[0] ; 
+        }
+
         //web init
 
         //news page init
@@ -403,12 +410,16 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                     s31ml[j] = 80 - newsWidth*j;
                 }
                 // s31ml = [80, -182, -444, -706, -968 .....]
-                $scope.news = res ;
-                $scope.news.sort(function(a,b) { 
-                    return parseInt(a.newsid) - parseInt(b.newsid) 
+                res.forEach(function(obj){
+                    obj.url=replaceURLWithHTMLLinks(obj.content);
+                    obj.content = obj.content.replace(obj.url,'');
+                    $scope.news = res ;
+                    $scope.news.sort(function(a,b) { 
+                        return parseInt(a.newsid) - parseInt(b.newsid) 
+                    });
                 });
                 var section = document.getElementById("section3_1");
-                section.style.width = res.length*newsWidth+"px";         
+                section.style.width = res.length*newsWidth+"px";      
             }
         });
 
