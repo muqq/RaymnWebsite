@@ -7,11 +7,11 @@
 </a>
 
 <nav class="frame" id="rightBar" >
-  <a class="rightWord" id="text1" href="#About" ng-click="changeColor(1)">about</a>
-  <a class="rightWord" id="text2" href="#Service" ng-click="changeColor(2)">services</a>
-  <a class="rightWord" id="text3" href="#News" ng-click="changeColor(3)">news</a>
-  <a class="rightWord" id="text4" href="#Work" ng-click="changeColor(4)">work</a>
-  <a class="rightWord" id="text5" href="#Contact" ng-click="changeColor(5)">contact</a>
+  <a class="rightWord" id="text1" href="#About" ng-click="changeColor(1)">{{ LanguageData.home.sideBar[0] }}</a>
+  <a class="rightWord" id="text2" href="#Service" ng-click="changeColor(2)">{{ LanguageData.home.sideBar[1] }}</a>
+  <a class="rightWord" id="text3" href="#News" ng-click="changeColor(3)">{{ LanguageData.home.sideBar[2] }}</a>
+  <a class="rightWord" id="text4" href="#Work" ng-click="changeColor(4)">{{ LanguageData.home.sideBar[3] }}</a>
+  <a class="rightWord" id="text5" href="#Contact" ng-click="changeColor(5)">{{ LanguageData.home.sideBar[4] }}</a>
 </nav>
 <div id="fullpage">
   <div class="section" id="section0">
@@ -22,7 +22,9 @@
     </div>
     <img id="scroll" src="img/LoginView/scroll.png"/>
     <img id="arrow" src="img/LoginView/arrow.png"/>
-  </div>
+<!--     <a href = "javascript:void(0)" ng-click = "clickChinese()">中文</a>
+    <a href = "javascript:void(0)" ng-click = "clickEnglish()">English</a>
+ -->  </div>
   <div class="section" id="section1">
     <img id="aboutRaymn" src="img/About/raymn.png"/>
     <div id="section1_1">
@@ -54,15 +56,21 @@
       <img id="shadow0" src="img/Service/shadow.png">
       <img id="service0" src="img/Service/design.png">
       <img id="white0" ng-mouseover="serviceMove(0)" ng-mouseleave="serviceQuit(0)" src="img/Service/white.png">
-      <img id="word0" src="img/Service/brand_word.png">
+      <div id="word0">
+        <p>{{ LanguageData.service.design }}</p>
+      </div>
       <img id="shadow1" src="img/Service/shadow.png">
       <img id="service1" src="img/Service/web.png">
       <img id="white1" ng-mouseover="serviceMove(1)" ng-mouseleave="serviceQuit(1)" src="img/Service/white.png">
-      <img id="word1" src="img/Service/web_word.png">
+      <div id="word1">
+        <p>{{ LanguageData.service.website }}</p>
+      </div>
       <img id="shadow2" src="img/Service/shadow.png">
       <img id="service2" src="img/Service/app.png">
       <img id="white2" ng-mouseover="serviceMove(2)" ng-mouseleave="serviceQuit(2)" src="img/Service/white.png">
-      <img id="word2" src="img/Service/app_word.png">
+      <div id="word2">
+        <p>{{ LanguageData.service.app }}</p>
+      </div>
     </div>
   </div>
   <div class="section" id="section3">
@@ -75,7 +83,7 @@
                       <img class="newsIcon" ng-src="{{ news.image }}"/>
                   </div>
                   <img class="newsWhite" id="newsWhite1" src="img/News/square_trans.png"><br>
-                  <div class="newsDate" id="newsDate1">{{ news.year }}<br>{{ news.date}}</div><br>
+                  <div class="newsDate" id="newsDate1"></div><br>
               </div>
               <div class="newsTitle" id="newsTitle1">{{ news.title }}</div>
           </div>
@@ -91,7 +99,8 @@
                 <h>{{newsContent.title}}</h>
                 <p>{{newsContent.year}}  {{newsContent.date}} {{newsContent.category}}</p>
                 <div id="section3_4_2_1">
-                  <p>{{newsContent.content}}<a style="color: #FFFFFF" href="{{newsContent.url}}">{{newsContent.url}}</a></p>
+                  <p>{{newsContent.content}}</p>
+                  <a style="color: #FFFFFF" href="{{newsContent.url}}">{{newsContent.url}}</a>
                 </div>
               </div>
           </div>
@@ -111,12 +120,12 @@
           </div>
           <div id="section5_1_2">
               <div id="section5_1_2_1_b"></div>
-              <input ng-model="Email.name" id="section5_1_2_1" type="text" name="Name" placeholder="Name"><br>
+              <input ng-model="Email.name" id="section5_1_2_1" type="text" name="Name" placeholder="{{LanguageData.contact.placeHolder[0]}}"><br>
               <div id="section5_1_2_2_b"></div>
-              <input id="section5_1_2_2" ng-model="Email.email" type="text" name="Email" placeholder="Email"><br>
+              <input id="section5_1_2_2" ng-model="Email.email" type="text" name="Email" placeholder="{{LanguageData.contact.placeHolder[1]}}"><br>
               <div id="section5_1_2_3_b"></div>
-              <input id="section5_1_2_3" ng-model="Email.title" type="text" name="Title" placeholder="Title"><br>
-              <textarea ng-model="Email.content" id="section5_1_2_4" name="Message" placeholder="Message"></textarea>
+              <input id="section5_1_2_3" ng-model="Email.title" type="text" name="Title" placeholder="{{LanguageData.contact.placeHolder[2]}}"><br>
+              <textarea ng-model="Email.content" id="section5_1_2_4" name="Message" placeholder="{{LanguageData.contact.placeHolder[3]}}"></textarea>
           </div>
       </div>
       <div id="section5_2">

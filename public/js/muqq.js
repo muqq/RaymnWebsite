@@ -14,6 +14,22 @@ var opControllers = angular.module('opControllers', []);
 
 opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$model',
     function($scope, $http, $window, $model) {
+        var checkMobile = function detectmob() { 
+         if( navigator.userAgent.match(/Android/i)
+         || navigator.userAgent.match(/webOS/i)
+         || navigator.userAgent.match(/iPhone/i)
+         || navigator.userAgent.match(/iPad/i)
+         || navigator.userAgent.match(/iPod/i)
+         || navigator.userAgent.match(/BlackBerry/i)
+         || navigator.userAgent.match(/Windows Phone/i)
+         ){
+            return true;
+          }
+         else {
+            return false;
+          }
+        }
+
         $(document).ready(function() {
             for (var i = 1 ; i<6 ; i++){
                 $('#card' + i).css({bottom:-200*i, opacity:0});
@@ -89,9 +105,10 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             }
         }     
         function changeText(cont1,cont2,cont3,speed){
-            var Otext= "Welcome to Raymn  ",
-                Otext2 = "A team consist of vitality , creativity and dream!",
-                Otext3 = "We design visual , build connection , we narrate brand story.",
+            console.log($scope.LanguageData.home);
+            var Otext= $scope.LanguageData.home.typeMachine.line1,
+                Otext2 = $scope.LanguageData.home.typeMachine.line2,
+                Otext3 = $scope.LanguageData.home.typeMachine.line3,
                 Ocontent = Otext.split(""),
                 Ocontent2 = Otext2.split(""),
                 Ocontent3 = Otext3.split(""),
@@ -313,10 +330,11 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
         //contact page
         var contactInterval ;
         function typeMachine()  {
-            var text= "LEAVE A MESSGE TO US!";
-            var text2 = "WE ARE LOOKING FORWARD TO HEARING YOUR IDEAS  "
-            var text3 = "AND WILL CONTACT YOU SOON !  ";
-            var text4 = "SEND"
+            console.log($scope.LanguageData);
+            var text = $scope.LanguageData.contact.typeMachine.line1;
+            var text2 = $scope.LanguageData.contact.typeMachine.line2;
+            var text3 = $scope.LanguageData.contact.typeMachine.line3;
+            var text4 = $scope.LanguageData.contact.typeMachine.line4;
             var content = text.split("");
             var content2 = text2.split("");
             var content3 = text3.split("");
@@ -364,9 +382,25 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             else return null ;
         }
 
-        //web init
+        $scope.clickChinese = function(){
+            window.location = "http://localhost:8000?language=Chinese" ;
+        }
 
-        //news page init
+        function getQueryVariable(variable){
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == variable){return pair[1];}
+            }
+            return(false);
+        }
+
+        $scope.clickEnglish = function(){
+            window.location = "http://localhost:8000?language=English" ;
+        }
+
+        //web init
         $(document).keyup(function(e) {
             if (e.keyCode == 27) { 
                 $scope.clickDark();
@@ -387,6 +421,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 $scope.newsRight();
             }
         });
+        //news page init
         var right = 0,
             keR = true,
             keL = true,
@@ -395,15 +430,6 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
             newsWidth = 262,
             s31ml = [];
         /////////////////
-        $model.About.users(function(err, res){
-            if (err) alert(err);
-            else {
-                $scope.data = res ;
-                $scope.data.sort(function(a,b) { 
-                    return parseInt(a.number) - parseInt(b.number) 
-                });
-            }
-        });
         $model.News.getNews(function(err, res){
             if (err) alert(err);
             else {
@@ -413,7 +439,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 // s31ml = [80, -182, -444, -706, -968 .....]
                 res.forEach(function(obj){
                     obj.url=replaceURLWithHTMLLinks(obj.content);
-                    obj.content = obj.content.replace(obj.url,'');
+                    //obj.content = obj.content.replace(obj.url,'');
                     $scope.news = res ;
                     $scope.news.sort(function(a,b) { 
                         return parseInt(a.newsid) - parseInt(b.newsid) 
@@ -423,10 +449,36 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 section.style.width = res.length*newsWidth+"px";      
             }
         });
-
+        $scope.LanguageData = {} ;
         $scope.Email = {};
         size();
-        changeText($("#p1"),$("#p2"),$("#p3"),50);
+        var language = getQueryVariable('language');
+        if (language === 'Chinese'){
+            $model.Language.getChinese(function(err, res){
+                if (err) alert(err);
+                else {
+                    $scope.LanguageData = res ;
+                    changeText($("#p1"),$("#p2"),$("#p3"),50);
+                    $scope.data = res.about ;
+                    $scope.data.sort(function(a,b) { 
+                        return parseInt(a.number) - parseInt(b.number) 
+                    });
+                }
+            });  
+        }else{
+            $model.Language.getEnglish(function(err, res){
+                if (err) alert(err);
+                else {
+                    $scope.LanguageData = res ;
+                    changeText($("#p1"),$("#p2"),$("#p3"),50);
+                    $scope.data = res.about ;
+                    $scope.data.sort(function(a,b) { 
+                        return parseInt(a.number) - parseInt(b.number) 
+                    });
+
+                }
+            });  
+        }
     }
 ]);
 
@@ -446,17 +498,6 @@ opControllers.factory('$model' , function($http){
                 });    
             }
         },
-        About :{
-            users : function(callback){
-                $http.get('/json/user.json').success(function(resp){
-                    console.log(resp);
-                    if (resp.error) callback(resp.error);
-                    else callback(null, resp);
-                }).error(function(err){
-                    callback(err);
-                });
-            }
-        },
         News :{
             getNews : function(callback){
                 $http.get(apiServer+'GetNews' , config).success(function(resp){
@@ -467,6 +508,27 @@ opControllers.factory('$model' , function($http){
                 });
 
             }
+        },
+        Language : {
+            getEnglish : function(callback){
+                $http.get('/json/English.json').success(function(resp){
+                    console.log(resp);
+                    if (resp.error) callback(resp.error);
+                    else callback(null, resp);
+                }).error(function(err){
+                    callback(err);
+                }); 
+            },
+            getChinese : function(callback){
+                $http.get('/json/Chinese.json').success(function(resp){
+                    console.log(resp);
+                    if (resp.error) callback(resp.error);
+                    else callback(null, resp);
+                }).error(function(err){
+                    callback(err);
+                }); 
+            },
+
         }
     }
 });

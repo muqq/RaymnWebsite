@@ -55,7 +55,8 @@ body {
 }
 
 #rightBar a {
-    text-decoration: none;  
+    text-decoration: none;
+    width: auto ;  
 }
 
 .rightWord {
@@ -488,7 +489,10 @@ body {
     position: absolute;
     left:35px;
     top:260px;
+    width: 240px;
     opacity: 0 ;
+    text-align: left;
+    color : #2B8787;
     -moz-transition: opacity 0.5s ease-out;
     -ms-transition: opacity 0.5s ease-out;
     -o-transition: opacity 0.5s ease-out;
@@ -538,7 +542,11 @@ body {
     position: absolute;
     left:295px;
     top:260px;
+    width: 240px;
     opacity: 0 ;
+    text-align: left;
+    color : #2B8787;
+
     -moz-transition: opacity 0.5s ease-out;
     -ms-transition: opacity 0.5s ease-out;
     -o-transition: opacity 0.5s ease-out;
@@ -588,7 +596,10 @@ body {
     position: absolute;
     left:555px;
     top:260px;
+    width: 240px;
     opacity: 0 ;
+    text-align: left;
+    color : #2B8787;
     -moz-transition: opacity 0.5s ease-out;
     -ms-transition: opacity 0.5s ease-out;
     -o-transition: opacity 0.5s ease-out;

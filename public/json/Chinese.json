@@ -1,0 +1,78 @@
+{
+	"home" : {
+		"sideBar" : ["關於我們", "服務項目", "新聞", "作品集", "聯絡我們"],
+		"typeMachine" : {
+			"line1" : "歡迎光臨雷夢",
+			"line2" : "A team consist of vitality , creativity and dream!",
+			"line3" : "We design visual , build connection , we narrate brand story."
+		}
+	},
+	"about" : [
+		    {
+		        "id": "card1",
+		        "nameImg": "img/About/ms.png",
+		        "allName": "Muqq Shih",
+		        "photoId": "photo1",
+		        "p1": "我對大學所學沒什麼興趣，於是開始自學Objective-C Javascript 等程式語言。我也致力於打造完美屬於雷夢的網頁和手機程式。",
+		        "img": "img/About/photo_1.jpg",
+		        "number": 1,
+		        "title": "程式設計師"
+		    },
+		    {
+		        "id": "card2",
+		        "nameImg": "img/About/sk.png",
+		        "allName": "Sprout Kuo",
+		        "photoId": "photo2",
+		        "p1": "Born in March 1991, I’m just an ordinary college student who wishes to make a difference by changing the world into a better place. I grew up in Chiayi, and graduated from NTUST, which is located in Taipei. At first I studied mechanics, and then transferred to materials, but not until later did I find out that my real interest is in coding. Android SDK, JAVA, JavaScript, CSS3, HTML5… you name it. I believe one day Raymn is going to be extraordinary.",
+		        "img": "img/About/photo_2.jpg",
+		        "number": 2,
+		        "title": "programmer"
+		    },
+		    {
+		        "id": "card3",
+		        "nameImg": "img/About/yk.png",
+		        "allName": "Youlanda Kuo",
+		        "photoId": "photo3",
+		        "p1": "郭有容 1991年出生於臺北 臺大政治系畢 大學時期一邊鑽研政治學的同時發現自己對於插畫、平面設計、以及創作更有興趣，便開始埋身於此 喜歡印刷品的手感，包裝設計後帶給人的印象與溫度，以及幫助品牌將背後的故事視覺化。",
+		        "img": "img/About/photo_3.jpg",
+		        "number": 3,
+		        "title": "設計師"
+		    },
+		    {
+		        "id": "card4",
+		        "nameImg": "img/About/sf.png",
+		        "allName": "Shaofu",
+		        "photoId": "photo4",
+		        "p1": "話說天下大勢．分久必合，合久必分：周末七國分爭，并入於秦。及秦滅之後，楚、漢分爭，又并入於漢。漢朝自高祖斬白蛇而起義，一統天下。後來光武中興，傳至獻帝，遂分為三國。",
+		        "img": "img/About/photo_4.jpg",
+		        "number": 4,
+		        "title": "manager"
+		    },
+		    {
+		        "id": "card5",
+		        "nameImg": "img/About/nn.png",
+		        "allName": "Niao Niao",
+		        "photoId": "photo5",
+		        "p1": "Rolling , jumping , I close my eyes.  I,incarnation of meaningless,mascot of Raymn, reporting for duty. The world needs me badly just as Raymn Creative agency do . Every day I do my responsibility of keep craping to calm my teammate down. I think I did brilliant job . The world needs me, and I know it.",
+		        "img": "img/About/photo_5.jpg",
+		        "number": 5,
+		        "title": "mascot"
+		    }
+		    	],
+	"service" : {
+			"design": "Creating attractive visual identity for you brand. including graphic design, illustration, packagin...",
+			"website": "Enhance brand story or activity visibility reliant upon impressive website.",
+			"app": "improving communication between consumers and brand by mobile APPs"
+		},
+	"news" : {},
+	"work" : {},
+	"contact": {
+		"typeMachine" : {
+			"line1" : "留言給我們!",
+			"line2" : "我們很期待你的意見  ",
+			"line3" : "不久後將會跟你聯絡!  ",
+			"line4" : "送出"
+		},
+		"placeHolder" : ["名字", "電子信箱", "標題", "意見"]
+	}
+}
