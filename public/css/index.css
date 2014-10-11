@@ -879,6 +879,11 @@ body {
     width: 570px;
     height: 150px;
     overflow: auto;
+    text-align: left ;
+}
+
+#link{
+    padding-left: 5px;
 }
 
 #section3_4_2_1::-webkit-scrollbar{

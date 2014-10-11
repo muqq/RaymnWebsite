@@ -437,13 +437,14 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                     s31ml[j] = 80 - newsWidth*j;
                 }
                 // s31ml = [80, -182, -444, -706, -968 .....]
-                res.forEach(function(obj){
-                    //obj.url=replaceURLWithHTMLLinks(obj.content);
-                    //obj.content = obj.content.replace(obj.url,'');
-                    $scope.news = res ;
-                    $scope.news.sort(function(a,b) { 
-                        return parseInt(a.newsid) - parseInt(b.newsid) 
-                    });
+                $scope.news = res ;
+                $scope.news.sort(function(a,b) { 
+                    return parseInt(a.newsid) - parseInt(b.newsid) 
+                });
+                $scope.news.forEach(function(obj){
+                    obj.url=replaceURLWithHTMLLinks(obj.content);
+                    console.log(obj.url);
+                    obj.content = obj.content.replace(obj.url,'');
                 });
                 var section = document.getElementById("section3_1");
                 section.style.width = res.length*newsWidth+"px";      
