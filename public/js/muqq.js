@@ -438,7 +438,7 @@ opControllers.controller('op-home-control', ['$scope', '$http', '$window', '$mod
                 }
                 // s31ml = [80, -182, -444, -706, -968 .....]
                 res.forEach(function(obj){
-                    obj.url=replaceURLWithHTMLLinks(obj.content);
+                    //obj.url=replaceURLWithHTMLLinks(obj.content);
                     //obj.content = obj.content.replace(obj.url,'');
                     $scope.news = res ;
                     $scope.news.sort(function(a,b) { 
